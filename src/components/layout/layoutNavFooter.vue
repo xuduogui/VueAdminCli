@@ -1,10 +1,10 @@
 <template>
-    <div>这是moduleA</div>
+    <div></div>
 </template>
 
 <script>
     export default {
-        name: "moduleA"
+        name: "layoutNavFooter"
     }
 </script>
 

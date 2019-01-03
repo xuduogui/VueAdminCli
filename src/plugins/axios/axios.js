@@ -1,4 +1,4 @@
-import axios from 'src/plugins/axios/axios'
+import axios from 'axios'
 import options from './axiosBase'
 
 const Axios = axios.create(options)

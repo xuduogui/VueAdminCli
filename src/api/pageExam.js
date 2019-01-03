@@ -1,12 +1,14 @@
 import axios from '../plugins/axios/axios'
 
-const getLayouts = async (config = null) => {
+const getTableData = async (config = null) => {
     return await axios({
         method: 'post',
-        url: '/api/getlayouts',
+        url: '/api/getTableData',
         data: { flag: '获取' + config }
     })
 }
 
-export default getLayouts
+export default {
+    getTableData
+}
 

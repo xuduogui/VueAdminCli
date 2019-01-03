@@ -8,8 +8,6 @@ Object.keys(RandomExtend).forEach(ele => {
     RandomExtend[ele]()
 })
 
-import getElements from './getElements'
-Mock.mock(`/api/getElements`, getElements)
+import pageExam from './pageExam'
+Mock.mock(`/api/getTableData`, pageExam.getTableData)
 
-import getLayouts from './getLayouts'
-Mock.mock(`/api/getlayouts`, getLayouts)

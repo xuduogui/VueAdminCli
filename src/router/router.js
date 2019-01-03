@@ -1,5 +1,9 @@
-import index from '../pages/index/index.vue'
+import pageExam from '../pages/exam/pageExam.vue'
 
 export default [
-    { path: '/', component: index },
+    {
+        path: '/',
+        name: 'index',
+        component: pageExam
+    },
 ]

@@ -11,16 +11,16 @@ module.exports = {
     pages: undefined, //在 multi-page 模式下构建应用
     productionSourceMap: true, //不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建
 
-    // configureWebpack: {
-    //     plugins: [
-    //         // new MyAwesomeWebpackPlugin()
-    //     ],
-    //     resolve: {
-    //         alias: {
-    //             '@cp': "@/src/components"
-    //         }
-    //     }
-    // },
+    configureWebpack: {
+        plugins: [
+            // new MyAwesomeWebpackPlugin()
+        ],
+        resolve: {
+            alias: {
+                'cp@': "@/src/api"
+            }
+        }
+    },
     // chainWebpack: (config)=>{
     //     config.resolve.alias
     //         .set('components', path.join(__dirname, './src/components'))
