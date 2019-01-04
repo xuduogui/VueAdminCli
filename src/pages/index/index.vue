@@ -5,7 +5,7 @@
                 <layout-nav-left></layout-nav-left>
             </el-aside>
             <el-container style="min-width: 800px;">
-                <el-header>
+                <el-header :style="navHeadStyle">
                     <layout-nav-head></layout-nav-head>
                 </el-header>
                 <el-main>
@@ -33,6 +33,9 @@
                 navLeftStyle: {
                     backgroundColor: this.$store.state.layoutStore.navLeftBackgroundColor,
                     overflow: "hidden"
+                },
+                navHeadStyle: {
+                    backgroundColor: this.$store.state.layoutStore.navHeadBackgroundColor,
                 }
             }
         },

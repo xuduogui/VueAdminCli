@@ -2,7 +2,14 @@
     <div>
         <el-row>
             <el-col :span="16">
-                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+                <el-menu
+                        :default-active="curSelected"
+                        class="el-menu-demo"
+                        mode="horizontal"
+                        @select="handleSelect"
+                        :background-color="backgroundColor"
+                        :text-color="textColor"
+                        :active-text-color="activeTextColor">
                     <el-menu-item index="0"><i class="el-icon-menu"></i></el-menu-item>
                     <el-menu-item index="1">处理中心</el-menu-item>
                     <el-submenu index="2">
@@ -23,7 +30,14 @@
             </el-col>
 
             <el-col :span="8">
-                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+                <el-menu
+                        :default-active="activeIndex"
+                        class="el-menu-demo"
+                        mode="horizontal"
+                        @select="handleSelect"
+                        :background-color="backgroundColor"
+                        :text-color="textColor"
+                        :active-text-color="activeTextColor">
                     <el-menu-item index="3" class="el-submenu-right">
                         退出
                     </el-menu-item>
@@ -43,12 +57,22 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "layoutNavHead",
         data() {
             return {
                 activeIndex: '1',
+
             };
+        },
+        computed: {
+            ...mapState({
+                curSelected: state => state.layoutStore.navHeadSelected,
+                backgroundColor: state => state.layoutStore.navHeadBackgroundColor,
+                textColor: state => state.layoutStore.navHeadTextColor,
+                activeTextColor: state => state.layoutStore.navHeadActiveTextColor,
+            })
         },
         methods: {
             handleSelect(key, keyPath) {

@@ -7,7 +7,7 @@ const vuexStore = {
     namespaced: true,
     state: {
         navBodyBreadcrumbs: [
-            // {name: '首页', path: '/'},
+            {name: '首页', path: '/'},
         ],
     },
     mutations: {

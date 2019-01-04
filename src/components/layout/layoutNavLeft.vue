@@ -1,7 +1,11 @@
 <template>
     <div>
-        <div style="height: 61px;">
+        <div class="el-logo-left">
             <!--测试-->
+            <div class="el-logo-box">
+                <i class="el-icon-share"></i>
+                <span v-show="!isCollapse">admin管理平台</span>
+            </div>
         </div>
         <el-menu
                 :default-active="curSelected"
@@ -50,7 +54,7 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex'
+    import {mapState} from 'vuex'
 
     export default {
         name: "navLeft",
@@ -68,7 +72,7 @@
                 isCollapse: state => state.layoutStore.navLeftIsCollapse
             })
         },
-        mounted () {
+        mounted() {
         },
         methods: {
             handleOpen(key, keyPath) {
@@ -91,5 +95,21 @@
     .el-menu-vertical-demo:not(.el-menu--collapse) {
         width: 200px;
         min-height: 400px;
+    }
+
+    .el-logo-left {
+        position: relative;
+        height: 61px;
+        line-height: 61px;
+        text-align: center;
+        color: #E6A23C;
+        font-weight: bold;
+    }
+
+    .el-logo-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 20px;
     }
 </style>
