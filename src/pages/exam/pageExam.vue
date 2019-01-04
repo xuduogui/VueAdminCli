@@ -1,8 +1,7 @@
 <template>
     <div>
-        <body-breadcrumb :breadcrumbs="breadcrumbs"></body-breadcrumb>
-        <body-search @getSearchData="getSearchDataFun">
-            <el-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
+        <body-search>
+            <page-exam-search @getSearchData="getSearchDataFun"></page-exam-search>
         </body-search>
         <body-table>
             <page-exam-table ref="table"></page-exam-table>
@@ -11,31 +10,27 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
     import BodySearch from "../../components/bodyItem/bodySearch";
     import BodyTable from "../../components/bodyItem/bodyTable";
     import BodyBreadcrumb from "../../components/bodyItem/bodyBreadcrumb";
     import PageExamTable from "./pageExamTable";
+    import PageExamSearch from "./pageExamSearch";
+
     export default {
         name: "pageExam",
-        data () {
+        data() {
             return {
-                searchData: ''
+                searchData: {}
             }
         },
-        computed: {
-            ...mapState({
-                breadcrumbs: state => state.pageExamStroe.navBreadcrumbs,
-            })
-        },
-        mounted () {
+        mounted() {
 
         },
         methods: {
             getSearchDataFun(data) {
                 this.searchData = data
             },
-            uploadTableBySearch () {
+            uploadTableBySearch() {
                 const child = this.$refs['table']
                 child.initTable({
                     page: child.currentPage,
@@ -49,7 +44,7 @@
                 this.uploadTableBySearch()
             }
         },
-        components: {PageExamTable, BodyBreadcrumb, BodyTable, BodySearch},
+        components: {PageExamSearch, PageExamTable, BodyBreadcrumb, BodyTable, BodySearch},
     }
 </script>
 

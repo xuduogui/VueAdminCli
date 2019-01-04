@@ -21,7 +21,7 @@ const vuexStore = {
         },
         switchNavLeftIsCollapse(state) {
             state.navLeftIsCollapse = !state.navLeftIsCollapse;
-        }
+        },
     },
     actions: {}
 }

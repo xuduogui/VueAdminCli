@@ -2,8 +2,7 @@
     <div>
         <el-table
                 :data="tableData2"
-                style="width: 100%"
-                :row-class-name="tableRowClassName">
+                style="width: 100%">
             <el-table-column
                     prop="date"
                     label="日期"
@@ -36,6 +35,7 @@
 
 <script>
     import pageExamApi from '../../api/pageExam.js'
+
     export default {
         name: "pageExamTable",
         data() {
@@ -51,7 +51,7 @@
         },
 
         methods: {
-            async initTable (config = {
+            async initTable(config = {
                 page: this.currentPage,
                 limit: this.pageSize
             }) {
@@ -68,15 +68,6 @@
                     this.total = result[0].data.count
                 }, 1000)
                 // 测试代码结束
-            },
-
-            tableRowClassName({row, rowIndex}) {
-                if (rowIndex === 1) {
-                    return 'warning-row';
-                } else if (rowIndex === 3) {
-                    return 'success-row';
-                }
-                return '';
             },
 
             handleSizeChange(val) {
