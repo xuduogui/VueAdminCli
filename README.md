@@ -1,4 +1,4 @@
-# vue-admin-cli
+# admin-pc
 
 ## Project setup
 ```

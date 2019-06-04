@@ -1,24 +1,27 @@
 <template>
-    <div id="app">
-        <index class="content-body"></index>
-    </div>
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
 
 <script>
-    import './css/common.css'
-    import Index from "./pages/index/index";
 
-    export default {
-        name: 'app',
-        components: {Index},
-    }
+export default {
+  name: 'app',
+}
 </script>
 
 <style>
-    html, body, #app, .content-body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>
