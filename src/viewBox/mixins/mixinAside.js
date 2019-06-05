@@ -1,7 +1,7 @@
 const mixin = {
     data() {
         return {
-            isCollapse: true
+            asideIsCollapse: false
         };
     },
     methods: {
@@ -12,6 +12,8 @@ const mixin = {
             console.log(key, keyPath);
         }
     },
+    watch: {
+    }
 }
 
 export default mixin

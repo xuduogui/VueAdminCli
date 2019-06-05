@@ -15,7 +15,9 @@ Plugin.install = function (Vue, options) {
         $SYSTEM_CONFIG: {
             get() {
                 return {
+                    // 服务器host
                     APP_SERVER_HOST,
+                    // 上传host
                     APP_UPLOAD_HOST,
                 }
             }
